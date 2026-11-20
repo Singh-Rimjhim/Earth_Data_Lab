@@ -1,0 +1,45 @@
+{
+  "datasets": {
+    "nasa_gistemp": {
+      "id": "nasa_gistemp",
+      "name": "NASA GISTEMP v4 (Observed)",
+      "type": "observed",
+      "description": "Global Surface Temperature Anomalies (Land-Ocean Temperature Index, LOTI) derived from NOAA GHCN v4 (meteorological stations) and ERSST v5 (ocean areas).",
+      "source_name": "NASA Goddard Institute for Space Studies (GISS)",
+      "citation": "GISTEMP Team, 2025: GISS Surface Temperature Analysis (GISTEMP), version 4. NASA Goddard Institute for Space Studies. Lenssen et al., 2019, JGR Atmospheres.",
+      "source_url": "https://data.giss.nasa.gov/gistemp/",
+      "units": "Degrees Celsius (°C)",
+      "baseline_period": "1951-1980 mean (global absolute mean ~14.0°C)",
+      "period": "1880 - 2025",
+      "coverage": "Global (60°S to 90°N spatial interpolation)",
+      "is_synthetic": false,
+      "limitations": [
+        "Pre-1900 observations have sparse spatial coverage across the Southern Hemisphere and oceans.",
+        "Anomalies express deviation from the 1951-1980 climatological baseline, not absolute temperature.",
+        "Urban Heat Island (UHI) adjustments are applied, but minor local microclimate biases may persist.",
+        "Annual values reflect natural variability (e.g., El Niño-Southern Oscillation, volcanic eruptions) superimposed on long-term trends."
+      ],
+      "file_path": "data/global_temperature_anomalies_nasa_gistemp.csv"
+    },
+    "synthetic_demo": {
+      "id": "synthetic_demo",
+      "name": "Synthetic Scenario (Demonstration)",
+      "type": "synthetic",
+      "description": "Artificially generated climate anomaly time-series designed for educational demonstrations, testing, and offline algorithm validation.",
+      "source_name": "Earth Data Lab Simulation Model",
+      "citation": "Simulated scenario generated using deterministic sinusoidal cycles (ENSO proxy) + 0.18°C/decade linear trend + Gaussian noise.",
+      "source_url": "Internal Algorithm (scripts/create_synthetic_data.py)",
+      "units": "Degrees Celsius (°C)",
+      "baseline_period": "Arbitrary 1950 baseline = 0.0°C",
+      "period": "1950 - 2030",
+      "coverage": "Global idealized time-series",
+      "is_synthetic": true,
+      "limitations": [
+        "SYNTHETIC DATA: Not based on real physical measurements.",
+        "Values should NEVER be used for scientific attribution or policy making.",
+        "Intended exclusively for platform feature demonstration and edge-case testing."
+      ],
+      "file_path": "data/synthetic_demo_climate.csv"
+    }
+  }
+}
